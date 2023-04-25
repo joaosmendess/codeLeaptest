@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Content,Header  } from "./styled";
+import { Container, Content, Header } from "./styled";
 
 import Title from "../../components/Title";
 import Button from "../../components/Button";
@@ -9,15 +9,12 @@ const MainScreen: React.FC = () => {
   return (
     <Container>
       <Header>
-      <Title title="CodeLeap Network" />
+        <Title title="CodeLeap Network" />
       </Header>
-     
 
-      <Content> 
+      <Content>
         <Input />
         <Input />
-
-      
       </Content>
     </Container>
   );
