@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-export const Container = styled.div`
+import { ITitleProps } from "./index";
+export const Container = styled.div<ITitleProps>`
   background-color: ${(props) => props.theme.color.primary};
   width: 800px;
   height: 80px;

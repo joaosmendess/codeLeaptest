@@ -1,29 +1,27 @@
 import React from "react";
 
-import {Container} from './style'
+import { ButtonStyle } from "./style";
 
-interface IButtonProps {
-  
-  title : string;
-
-  
-  
+export enum ButtonType {
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+  DANGER = "danger",
+  SUBMIT = "submit",
+  DELETE = "delete",
 }
 
-const Button: React.FC <IButtonProps> = ({ 
-   title 
-  
-  }) => { 
+export interface IButtonProps {
+  text: string;
+  buttonType: ButtonType;
+}
+// nesse type agora, vc meio qe coloca se ele pode ser, de deletar, de dar submit
+
+const Button: React.FC<IButtonProps> = ({ text, buttonType }) => {
   return (
-    <Container>
-    <button 
-    title={title}
-
-    > <h1>{title}</h1>   </button> 
-   
-   
-    </Container>
+    <ButtonStyle text={text} buttonType={buttonType}>
+      {text}
+    </ButtonStyle>
   );
-}
+};
 
 export default Button;

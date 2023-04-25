@@ -2,15 +2,16 @@ import React from "react";
 
 import { Container, TitleText } from "./style";
 
-interface ITitleProps {
-  title: string;
+export interface ITitleProps {
+  text: string;
 }
 
-const Title: React.FC<ITitleProps> = ({ title }) => {
+const Title: React.FC<ITitleProps> = ({ text }) => {
   return (
-    <Container>
-      <TitleText title={title} />
-      {/* aqui vc so escolhe um lugar pra colocar esse title */} 
+    <Container text={text}>
+      <TitleText>
+        {text}
+      </TitleText>
     </Container>
   );
 };

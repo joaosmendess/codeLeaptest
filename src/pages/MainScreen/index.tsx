@@ -9,9 +9,8 @@ const MainScreen: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Title title="CodeLeap Network" />
+        <Title text="CodeLeap Network" />
       </Header>
-
       <Content>
         <Input />
         <Input />
