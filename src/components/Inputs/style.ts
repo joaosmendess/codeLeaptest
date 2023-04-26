@@ -18,7 +18,9 @@ export const TitleInput = styled.input`
 export const ContentInput = styled.textarea`
   border: 1px solid #cccccc;
   width: 704px;
+  max-width: 730px;
   height: 74px;
+  max-height: 90px;
   border-radius: 8px;
 
   ::placeholder {
