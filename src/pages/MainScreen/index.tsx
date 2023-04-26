@@ -1,22 +1,25 @@
 import React from "react";
-import { Container, Content, Header } from "./styled";
+import { Container, Content, DivButton } from "./styled";
 
-import Title from "../../components/Title";
+import Title, { TitleType } from "../../components/Title";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import Input2 from "../../components/Input2";
-
+import { ButtonType } from "../../components/Button";
 
 const MainScreen: React.FC = () => {
   return (
     <Container>
-      <Header>
-        <Title text="CodeLeap Network" />
-      </Header>
-      <Input2 textarea placeholder="Oii" label="Opa" ></Input2>
+      <Title titleType={TitleType.MS} text="CodeLeap Network" />
+
       <Content>
-        <Input />
-        <Input />
+        <Title titleType={TitleType.CT} text="What’s on your mind?" />
+        <Input2 input placeholder="Hello world" label="Tittle"></Input2>
+        <Input2 textarea placeholder="Content here" label="Content"></Input2>
+      <DivButton>
+          <Button text="Create" buttonType={ButtonType.PRIMARY} />
+          </DivButton>
+    
       </Content>
     </Container>
   );

@@ -3,11 +3,13 @@ import styled from "styled-components";
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+padding: 10px;
+
 `;
 
 export const TitleInput = styled.input`
   border: 1px solid #cccccc;
-  width: 670px;
+  width: 704px;
   height: 32px;
   border-radius: 8px;
   padding: 2px;
@@ -15,7 +17,7 @@ export const TitleInput = styled.input`
 
 export const ContentInput = styled.textarea`
   border: 1px solid #cccccc;
-  width: 670px;
+  width: 704px;
   height: 74px;
   border-radius: 8px;
 

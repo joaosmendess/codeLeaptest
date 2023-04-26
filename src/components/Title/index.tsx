@@ -4,12 +4,16 @@ import { Container, TitleText } from "./style";
 
 export interface ITitleProps {
   text: string;
+  titleType: TitleType;
 }
-
-const Title: React.FC<ITitleProps> = ({ text }) => {
+export enum TitleType {
+  MS= "mainScreenTitle",
+  CT= "contentTitle" 
+}
+const Title: React.FC<ITitleProps> = ({ text , titleType}) => {
   return (
-    <Container text={text}>
-      <TitleText>
+    <Container text={text} titleType={titleType}>
+      <TitleText text={text} titleType={titleType}>
         {text}
       </TitleText>
     </Container>

@@ -1,14 +1,38 @@
 import styled from "styled-components";
-import { ITitleProps } from "./index";
+import { ITitleProps, TitleType } from "./index";
 export const Container = styled.div<ITitleProps>`
-  background-color: ${(props) => props.theme.color.primary};
+
   width: 800px;
   height: 80px;
 `;
 
-export const TitleText = styled.h1`
-  color: ${(props) => props.theme.color.secondary};
-  padding: 20px;
-  height: 700;
-  size: 20px;
+export const TitleText = styled.h1 <ITitleProps>`
+ 
+ padding:21px;
+ 
+ 
+ 
+ 
+ 
+ color:${(props) => {
+    switch (props.titleType) {
+      case TitleType.MS:
+        return  "#FFFF" 
+        ;
+      case TitleType.CT:
+        return "#000000";
+      }
+  }};
+
+  
+
+  background-color: ${(props) => {
+    switch (props.titleType) {
+      case TitleType.MS:
+        return "#7695ec"
+      case TitleType.CT:
+        return "none";
+      }
+  }};
 `;
+

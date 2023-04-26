@@ -6,6 +6,7 @@ export const Container = styled.div``;
 export const ButtonStyle = styled.button<IButtonProps>`
   width: 120px;
   border-radius: 8px;
+  height: 32px;
   color: white;
 
   font-family: Roboto; // Depois lembra de colocar fonte

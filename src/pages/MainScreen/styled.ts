@@ -5,25 +5,43 @@ export const Container = styled.div `
 
 margin:50% 22% ;
 margin-top: 10px;
-border: 1px none;
+
 width: 800px;
 height: 1000px;
+display: flex;
+flex-direction: column;
+align-items: center;
 
 
 `
  
 export const Content = styled.div `
 display: flex;
-justify-content: center;
+
 flex-direction: column;
-align-items: center;
-padding: 10px;
+
+height: 334px;
+width:750px;
+
+padding:0;
+margin-top:5px;
+
+border: 1px solid;
+border-radius: 16px;
+
+
+
+
+
 `;
 
 
-export const Header = styled.div `
-display: flex;
+export const DivButton = styled.div `
 
+display: flex;
+justify-content: right;
+padding: 15px;
+margin-right: 15px;
 
 
 `;

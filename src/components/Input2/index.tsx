@@ -9,7 +9,7 @@ interface InputProps {
   label?: string;
 }
 
-const Input: React.FC<InputProps> = ({
+const Input2: React.FC<InputProps> = ({
   input,
   textarea,
   placeholder,
@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <InputContainer>
-      {input && !textarea ? (
+      {input && !textarea ? ( 
         <>
           <Label>{label}</Label>
           <TitleInput placeholder={placeholder}></TitleInput>
@@ -33,4 +33,4 @@ const Input: React.FC<InputProps> = ({
   );
 };
 
-export default Input;
+export default Input2;
