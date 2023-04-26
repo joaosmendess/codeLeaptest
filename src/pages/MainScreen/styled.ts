@@ -42,6 +42,7 @@ display: flex;
 justify-content: right;
 padding: 15px;
 margin-right: 15px;
+min-width: 100px;
 max-width: 750px;
 max-height: 75px;
 

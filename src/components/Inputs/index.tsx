@@ -2,14 +2,14 @@ import React from "react";
 
 import { InputContainer, TitleInput, ContentInput, Label } from "./style";
 
-interface InputProps {
+export interface InputProps {
   input?: boolean;
   textarea?: boolean;
   placeholder?: string;
   label?: string;
 }
 
-const Input2: React.FC<InputProps> = ({
+const Input: React.FC<InputProps> = ({
   input,
   textarea,
   placeholder,
@@ -33,4 +33,4 @@ const Input2: React.FC<InputProps> = ({
   );
 };
 
-export default Input2;
+export default Input;

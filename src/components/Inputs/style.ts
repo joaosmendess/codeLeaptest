@@ -9,15 +9,17 @@ padding: 10px;
 
 export const TitleInput = styled.input`
   border: 1px solid #cccccc;
-  width: 704px;
+  min-width: 452px;
+  max-width: 704px;
   height: 32px;
   border-radius: 8px;
-  padding: 2px;
+  padding: 3px;
 `;
 
 export const ContentInput = styled.textarea`
   border: 1px solid #cccccc;
   width: 704px;
+  min-width: 100px;
   max-width: 730px;
   height: 74px;
   max-height: 90px;
