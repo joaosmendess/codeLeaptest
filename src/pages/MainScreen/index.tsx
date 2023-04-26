@@ -3,8 +3,8 @@ import { Container, Content, DivButton } from "./styled";
 
 import Title, { TitleType } from "../../components/Title";
 import Button from "../../components/Button";
-import Input from "../../components/Input";
-import Input2 from "../../components/Input2";
+
+import Input2 from "../../components/Inputs";
 import { ButtonType } from "../../components/Button";
 
 const MainScreen: React.FC = () => {
