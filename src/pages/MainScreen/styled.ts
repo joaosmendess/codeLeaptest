@@ -36,7 +36,7 @@ border-radius: 16px;
 `;
 
 
-export const DivButton = styled.div `
+export const ContainerButton = styled.div `
 
 display: flex;
 justify-content: right;

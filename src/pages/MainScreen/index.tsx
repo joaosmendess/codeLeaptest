@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Content, DivButton } from "./styled";
+import { Container, ContainerButton, Content,  } from "./styled";
 
 import Title, { TitleType } from "../../components/Title";
 import Button from "../../components/Button";
@@ -16,9 +16,9 @@ const MainScreen: React.FC = () => {
         <Title titleType={TitleType.CT} text="What’s on your mind?" />
         <Input input placeholder="Hello world" label="Tittle"></Input>
         <Input  textarea placeholder="Content here" label="Content"></Input>
-      <DivButton>
+      <ContainerButton>
           <Button text="Create" buttonType={ButtonType.PRIMARY} />
-          </DivButton>
+          </ContainerButton>
     
       </Content>
     </Container>
