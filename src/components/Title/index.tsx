@@ -6,15 +6,12 @@ export interface ITitleProps {
   text: string;
   titleType: TitleType;
 }
-export enum TitleType {
-  MS= "mainScreenTitle",
-  CT= "contentTitle" 
-}
+export type TitleType = 'CT' | 'MS' | 'PC'
 const Title: React.FC<ITitleProps> = ({ text , titleType}) => {
   return (
     <Container text={text} titleType={titleType}>
       <TitleText text={text} titleType={titleType}>
-        {text}
+        <h1>{text}</h1>
       </TitleText>
     </Container>
   );

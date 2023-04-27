@@ -2,25 +2,68 @@ import styled from "styled-components";
 import { ITitleProps, TitleType } from "./index";
 export const Container = styled.div<ITitleProps>`
 
-  width: 800px;
-  height: 80px;
+
+
 `;
 
-export const TitleText = styled.h1 <ITitleProps>`
+export const TitleText = styled.div <ITitleProps>`
+ padding: ${(props) => {
+    switch (props.titleType) {
+      case 'MS':
+        return  "25px" 
+        ;
+        case 'CT':
+          return "23px";
+        case 'PC':
+          return  "20px;"
+      }
+  }}; 
+  
+  
+
+ width:${(props) => {
+    switch (props.titleType) {
+      case 'MS':
+        return  "800px" 
+        ;
+        case 'CT':
+          return "none";
+        case 'PC':
+          return  "752px;"
+      }
+  }}; ;
+
+
  
- padding:21px;
+ border-radius: ${(props) => {
+    switch (props.titleType) {
+      case 'MS':
+        return  "none" 
+        ;
+        case 'CT':
+          return "none";
+        case 'PC':
+          return  " 16px 16px 0px 0px;"
+      }
+  }};
+
  
- 
- 
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 26px;
  
  
  color:${(props) => {
     switch (props.titleType) {
-      case TitleType.MS:
+      case 'MS':
         return  "#FFFF" 
         ;
-      case TitleType.CT:
+      case 'CT':
         return "#000000";
+        case 'PC':
+          return  "#FFFF"
       }
   }};
 
@@ -28,10 +71,12 @@ export const TitleText = styled.h1 <ITitleProps>`
 
   background-color: ${(props) => {
     switch (props.titleType) {
-      case TitleType.MS:
+      case 'MS':
         return "#7695ec"
-      case TitleType.CT:
+      case 'CT':
         return "none";
+        case 'PC':
+          return "#7695ec"
       }
   }};
 `;

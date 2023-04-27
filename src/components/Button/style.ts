@@ -18,14 +18,15 @@ export const ButtonStyle = styled.button<IButtonProps>`
 
   background-color: ${(props) => {
     switch (props.buttonType) {
-      case ButtonType.PRIMARY:
+      case "primary":
         return "#7695ec";
-      case ButtonType.SECONDARY:
+      case "secondary":
         return "#28a745";
-      case ButtonType.DANGER:
+      case "danger":
         return "#dc3545";
       default:
         return "#cccccc";
     }
+    
   }};
 `;

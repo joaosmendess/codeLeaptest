@@ -6,12 +6,19 @@ export const Container = styled.div `
 margin:50% 22% ;
 margin-top: 10px;
 
+
 width: 800px;
 height: 1000px;
 display: flex;
 flex-direction: column;
 align-items: center;
 
+
+
+`
+
+export const ContainerTitle = styled.div `
+margin-top:10px;
 
 `
  
@@ -46,6 +53,14 @@ min-width: 100px;
 max-width: 750px;
 max-height: 75px;
 
+
+
+`;
+
+export const ContainerCard = styled.div `
+
+
+padding: 10px;
 
 
 `;
