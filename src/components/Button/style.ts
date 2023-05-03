@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { IButtonProps, ButtonType } from "./index";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+display: flex;`
 
 export const ButtonStyle = styled.button<IButtonProps>`
   width: 120px;

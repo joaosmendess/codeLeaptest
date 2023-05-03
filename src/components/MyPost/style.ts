@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 
-export const Container = styled.div `
-box-sizing: border-box;
+export const Container = styled.div `box-sizing: border-box;
 
 
 width: 752px;
@@ -12,24 +11,10 @@ height: 316px;
 background: #FFFFFF;
 border: 1px solid #999999;
 border-radius: 16px;
-margin-top: 15px;
+margin-top: 15px;`;
 
 
-`;
-
-
-
-
-export const Header = styled.div `
-
-border-top-left-radius: 5px;
-
-
-`;
-
-
-export const Content = styled.div `
-padding: 15px;
+export const Content = styled.div `padding: 15px;
 
 
 
@@ -55,7 +40,7 @@ color: #777777;
     width: 148.74px;
 
 
-margin-left: 390px;
+margin-left: 470px;
 
 
 font-weight: 400;
@@ -80,6 +65,14 @@ left: 608px;
 top: 590px;
 
 
-}
+}`;
+
+
+export const Header = styled.div `border-top-left-radius: 5px;
+`;
+
+export const ContainerButton = styled.button `
+
 
 `;
+

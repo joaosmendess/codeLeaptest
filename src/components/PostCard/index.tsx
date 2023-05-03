@@ -1,16 +1,15 @@
-import React from "react";
+
 import { Container, Content, Header } from "./style";
-
 import Title from "../Title";
+import {   IJob } from '../../redux/types';
 
-export interface IPostCardProps {
-  username: string;
-  title: string;
-  content: string;
-  created_datetime: string;
-}
+
+interface IPostCardProps extends IJob {}
+
+
 
 const PostCard: React.FC<IPostCardProps> = ({
+  id,
   username,
   title,
   content,
@@ -18,11 +17,9 @@ const PostCard: React.FC<IPostCardProps> = ({
 }) => {
   return (
     <Container>
-      <Header> 
+      <Header>
         <Title text={title} titleType="PC" />
-       
-        
-        </Header>
+      </Header>
       <Content>
         <label>{username}</label> <span>{created_datetime}</span>
         <p>{content}</p>
@@ -32,3 +29,4 @@ const PostCard: React.FC<IPostCardProps> = ({
 };
 
 export default PostCard;
+

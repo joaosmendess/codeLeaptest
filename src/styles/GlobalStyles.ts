@@ -17,7 +17,7 @@ html, body, #root {
     outline:0;
     font-family: 'Roboto', sans-serif;
 }
-button {
+button, svg {
     cursor: pointer;
 }
 `;

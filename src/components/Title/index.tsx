@@ -2,6 +2,8 @@ import React from "react";
 
 import { Container, TitleText } from "./style";
 
+import Button from "../Button";
+
 export interface ITitleProps {
   text: string;
   titleType: TitleType;
@@ -12,6 +14,8 @@ const Title: React.FC<ITitleProps> = ({ text , titleType}) => {
     <Container text={text} titleType={titleType}>
       <TitleText text={text} titleType={titleType}>
         <h1>{text}</h1>
+        
+        
       </TitleText>
     </Container>
   );
