@@ -1,5 +1,4 @@
-import React from "react";
-
+import { RefObject } from "react";
 import { InputContainer, TitleInput, ContentInput, Label } from "./style";
 
 export interface InputProps {
@@ -7,6 +6,8 @@ export interface InputProps {
   textarea?: boolean;
   placeholder?: string;
   label?: string;
+  ref?: RefObject<HTMLInputElement | HTMLTextAreaElement>;
+  onChange?: () => void;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -17,7 +18,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <InputContainer>
-      {input && !textarea ? ( 
+      {input && !textarea ? (
         <>
           <Label>{label}</Label>
           <TitleInput placeholder={placeholder}></TitleInput>

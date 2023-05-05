@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+
 import {
   Container,
   ContainerButton,
@@ -14,23 +15,52 @@ import MyPost from "../../components/MyPost";
 import PostCardContainer from "../../actions";
 
 const MainScreen: React.FC = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [inputValue, setInputValue] = useState("");
+  const [textareaValue, setTextareaValue] = useState("");
+
+  const handleInputChange = () => {
+    const inputVal: any = inputRef.current?.value;
+    const textareaVal: any = textareaRef.current?.value;
+
+    setInputValue(inputVal);
+    setTextareaValue(textareaVal);
+  };
+
+  useEffect(() => {
+    console.log("Valor do input:", inputValue);
+    console.log("Valor da textarea:", textareaValue);
+  }, [inputRef]);
+
+
   return (
     <Container>
       <Title titleType="MS" text="CodeLeap Network" />
 
       <Content>
-        <Title titleType="CT" text="What’s on your mind?"  />
-        <Input input placeholder="Hello world" label="Tittle"></Input>
-        <Input textarea placeholder="Content here" label="Content"></Input>
+        <Title titleType="CT" text="What’s on your mind?" />
+        <Input
+          input
+          placeholder="Hello world"
+          label="Tittle"
+          ref={inputRef}
+        ></Input>
+        <Input textarea placeholder="Content here" label="Content" ref={textareaRef}></Input>
         <ContainerButton>
           <Button
             text="Create"
             buttonType={"primary"}
-            onClick={() => console.log("You clicked on the pink circle!")}
+            onClick={handleInputChange}
           />
         </ContainerButton>
       </Content>
-<MyPost title="Meu primeiro Post" content="Testando aplicação" username="@joaosmendess" created_datetime="2 min ago"/>
+      <MyPost
+        title="Meu primeiro Post"
+        content="Testando aplicação"
+        username="@joaosmendess"
+        created_datetime="2 min ago"
+      />
 
       <ContainerCard>
         <PostCardContainer />
