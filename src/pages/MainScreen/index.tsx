@@ -14,26 +14,54 @@ import Input from "../../components/Inputs";
 import MyPost from "../../components/MyPost";
 import PostCardContainer from "../../actions";
 
+
+
+
+interface Post {
+  title: string;
+  content: string;
+  created_datetime: string;
+}
+
+
 const MainScreen: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [inputValue, setInputValue] = useState("");
   const [textareaValue, setTextareaValue] = useState("");
+  const [titleName, setTitleName] = useState("");
+  const [content, setContent] = useState("");
+  const [showPost, setShowPost] = useState(false);
+  const [posts, setPosts] = useState<Post[]>([]);
 
-  const handleInputChange = () => {
-    const inputVal: any = inputRef.current?.value;
-    const textareaVal: any = textareaRef.current?.value;
 
-    setInputValue(inputVal);
-    setTextareaValue(textareaVal);
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (event.target === inputRef.current) {
+      setInputValue(event.target.value);
+    } else if (event.target === textareaRef.current) {
+      setTextareaValue(event.target.value);
+    } 
+    
   };
 
-  useEffect(() => {
-    console.log("Valor do input:", inputValue);
-    console.log("Valor da textarea:", textareaValue);
-  }, [inputRef]);
-
-
+  const handleSubmit = () => {
+    setTitleName(inputValue);
+    setContent(textareaValue);
+    setShowPost(true);
+    setPosts([
+      
+      {
+        title: inputValue,
+        content: textareaValue,
+        created_datetime: new Date().toLocaleString(),
+      },...posts
+    ]);
+    setInputValue("");
+    setTextareaValue("");
+  }
+  
   return (
     <Container>
       <Title titleType="MS" text="CodeLeap Network" />
@@ -45,23 +73,27 @@ const MainScreen: React.FC = () => {
           placeholder="Hello world"
           label="Tittle"
           ref={inputRef}
+          onChange={handleChange}
         ></Input>
-        <Input textarea placeholder="Content here" label="Content" ref={textareaRef}></Input>
+        <Input textarea placeholder="Content here" label="Content" ref={textareaRef} onChange={handleChange}></Input>
         <ContainerButton>
           <Button
             text="Create"
             buttonType={"primary"}
-            onClick={handleInputChange}
+            onClick={handleSubmit}
           />
         </ContainerButton>
       </Content>
+     {posts.map((post, index) => 
       <MyPost
-        title="Meu primeiro Post"
-        content="Testando aplicação"
-        username="@joaosmendess"
-        created_datetime="2 min ago"
+       key={index}
+       title={post.title}
+       content={post.content}
+       username="@joaosmendess"
+       created_datetime={post.created_datetime}
       />
-
+      )}
+      
       <ContainerCard>
         <PostCardContainer />
       </ContainerCard>

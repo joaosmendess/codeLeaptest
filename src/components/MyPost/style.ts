@@ -40,7 +40,7 @@ color: #777777;
     width: 148.74px;
 
 
-margin-left: 470px;
+margin-left: 530px;
 
 
 font-weight: 400;

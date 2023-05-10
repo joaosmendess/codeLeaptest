@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import React, { forwardRef } from "react";
 import { InputContainer, TitleInput, ContentInput, Label } from "./style";
 
 export interface InputProps {
@@ -6,32 +6,36 @@ export interface InputProps {
   textarea?: boolean;
   placeholder?: string;
   label?: string;
-  ref?: RefObject<HTMLInputElement | HTMLTextAreaElement>;
-  onChange?: () => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-const Input: React.FC<InputProps> = ({
-  input,
-  textarea,
-  placeholder,
-  label,
-}) => {
-  return (
-    <InputContainer>
-      {input && !textarea ? (
-        <>
-          <Label>{label}</Label>
-          <TitleInput placeholder={placeholder}></TitleInput>
-        </>
-      ) : null}
-      {textarea && !input ? (
-        <>
-          <Label>{label}</Label>
-          <ContentInput placeholder={placeholder}></ContentInput>
-        </>
-      ) : null}
-    </InputContainer>
-  );
-};
+const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
+  ({ input, textarea, placeholder, label, onChange }, ref) => {
+    return (
+      <InputContainer>
+        {input && !textarea ? (
+          <>
+            <Label>{label}</Label>
+            <TitleInput
+              ref={ref as React.RefObject<HTMLInputElement>}
+              placeholder={placeholder}
+              onChange={onChange}
+            ></TitleInput>
+          </>
+        ) : null}
+        {textarea && !input ? (
+          <>
+            <Label>{label}</Label>
+            <ContentInput
+              ref={ref as React.RefObject<HTMLTextAreaElement>}
+              placeholder={placeholder}
+              onChange={onChange}
+            ></ContentInput>
+          </>
+        ) : null}
+      </InputContainer>
+    );
+  }
+);
 
 export default Input;

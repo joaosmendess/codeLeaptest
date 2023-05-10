@@ -18,7 +18,7 @@ const MyPost: React.FC<IPostProps> = ({
   return (
     <Container>
       <Header>
-       <MyTitlePost text="My frist Post"/>
+       <MyTitlePost text={title}/>
      
          <ContainerButton>
           
