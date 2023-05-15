@@ -10,9 +10,9 @@ export const ModalBackground = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
   left: 0;
-  position: fixed;
+  position: relative;
   right: 0;
-  top: 0;
+  top: 0px;
 `;
 
 export const ModalContent = styled.div`
@@ -21,6 +21,8 @@ export const ModalContent = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   max-width: 600px;
   padding: 20px;
+  position: relative;
+  z-index: 999; /* valor alto para aparecer por cima */
 `;
 
 export const ModalHeader = styled.h2`
@@ -31,7 +33,7 @@ export const ModalHeader = styled.h2`
 export const ModalForm = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 `;
 
 export const ModalInput = styled.input`

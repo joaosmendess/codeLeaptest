@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-padding: 10px;
 
-`;
 
 export const TitleInput = styled.input`
   border: 1px solid #cccccc;
@@ -14,6 +9,11 @@ export const TitleInput = styled.input`
   height: 32px;
   border-radius: 8px;
   padding: 3px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+  }
 `;
 
 export const ContentInput = styled.textarea`
@@ -31,6 +31,23 @@ export const ContentInput = styled.textarea`
     left: 0;
     padding: 2px;
   }
+
+  @media (max-width: 768px) {
+    max-width: 700%;
+    width: 100%;
+  }
+`;
+
+
+/* media query para telas menores que 768px */
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  @media (max-width: 768px) {
+    padding: 5px;
+  }
 `;
 
 export const Label = styled.label`
@@ -39,4 +56,9 @@ export const Label = styled.label`
   line-height: 19px;
   letter-spacing: 0em;
   text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
 `;

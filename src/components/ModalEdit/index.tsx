@@ -22,11 +22,16 @@ const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, onSave, initialT
     setTitle(initialTitle);
     setContent(initialContent);
     onClose();
-  };
+  }; 
 
+  if (!isOpen) {
+    return null; // Se o modal não estiver aberto, não renderize nada
+  }
   return (
-    <ModalContainer className={`modal ${isOpen ? 'is-active' : ''}`}  >
-     
+    <>
+    
+    <ModalContainer >
+     <ModalBackground >
       <ModalContent >
         <ModalHeader>Edit</ModalHeader>
         <ModalForm>
@@ -43,11 +48,13 @@ const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, onSave, initialT
           />
         </ModalForm>
         <ModalActions>
-          <ModalButton onClick={handleSave}>Save</ModalButton>
+          <ModalButton onClick= {handleSave}>Save</ModalButton>
           <ModalButton onClick={handleCancel}>Cancel</ModalButton>
         </ModalActions>
       </ModalContent>
+      </ModalBackground>
     </ModalContainer>
+    </>
   );
   }
   export default EditModal;

@@ -1,6 +1,11 @@
 import { Container, Content, Header, ContainerButton } from "./style";
 import MyTitlePost from "../MyTitlePost";
-import Button from "../Button";
+import Button from "../Button"
+import React from "react";
+import { useState } from "react";
+
+import EditModal from "../ModalEdit";
+import DeleteModal from "../ModalDelete";
 
 export interface IPostProps {
   title: string;
@@ -15,19 +20,74 @@ const MyPost: React.FC<IPostProps> = ({
   content,
   created_datetime,
 }) => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [currentContent, setCurrentContent] = useState(content);
+  const [currentTitle, setCurrentTitle] = useState(title)
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+ 
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+    setShowModal(true)
+  };
+
+  
+  const handleSave = (title: string, content: string) => {
+    console.log(`Title: ${title}, Content: ${content}`);
+    setIsModalOpen(false);
+    setCurrentContent(content);
+    setCurrentTitle(title)
+  }
+
+  const handleDelete = () => {
+    // Aqui você pode implementar a lógica para deletar o post
+    console.log("Deleting post...");
+    // Exemplo: defina os campos relevantes como vazios ou nulos
+    setCurrentContent("");
+    setCurrentTitle("");
+    setIsDeleteModalOpen(false);
+  };
+
+    
+
+
+
   return (
     <Container>
+       
       <Header>
-       <MyTitlePost text={title}/>
+      
+       <MyTitlePost text={currentTitle} onDelete={() => setIsDeleteModalOpen(true)}
+        onEdit={handleOpenModal}/>
      
-         <ContainerButton>
-          
-        </ContainerButton>
       </Header>
+     
       <Content>
         <label>{username}</label> <span>{created_datetime}</span>
-        <p>{content}</p>
+        <p>{currentContent}</p>
+        {showModal && (
+        <EditModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onSave={handleSave}
+          initialTitle="Initial Title"
+          initialContent="Initial Content"
+        />
+        )}
+         
+         {isDeleteModalOpen && (
+          <DeleteModal
+            isOpen={isDeleteModalOpen}
+            onClose={() => setIsDeleteModalOpen(false)}
+            onDelete={handleDelete}
+          />
+        )}
+
       </Content>
+    
     </Container>
   );
 };

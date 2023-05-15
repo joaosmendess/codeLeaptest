@@ -1,81 +1,55 @@
 import React from "react";
 import { useState } from "react";
-import { Container, TitleText,SpanDiv } from "./style";
+import { Container, TitleText, SpanDiv } from "./style";
 
 import Button from "../Button";
-import { BiTrash , BiMessageSquareEdit} from "react-icons/bi";
+import { BiTrash, BiMessageSquareEdit } from "react-icons/bi";
 
 import EditModal from "../ModalEdit";
-export interface IMyTitlePost {
+
+
+interface IMyTitlePost {
   text: string;
+  onEdit: () => void; // adiciona propriedade onEdit
+  onDelete: () => void;
 }
 
-const MyTitlePost: React.FC<IMyTitlePost> = ({ text }) => {
+const MyTitlePost: React.FC<IMyTitlePost> = ({ text, onEdit, onDelete }) => {
+  const handleEditClick = () => {
+   console.log('Botão de edição clicado!');
+   onEdit
 
-  const [showModal, setShowModal] = useState(false);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleSave = (title: string, content: string) => {
-    (`Title: ${title}, Content: ${content}`);
-    setIsModalOpen(false);
-   
   };
 
-  const ViewModal = ( ) => {
-
-  if (isModalOpen||true) {
-    setShowModal 
-    
-  }
-
-  }
   return (
     <Container>
       <TitleText>
-
-        
-      
-        
-        
         <SpanDiv>
-       <h1>{text}</h1>
-      <span>
-     
-        <BiTrash 
-        
-        size={30} >
-          
-        <Button
-            buttonType="primary"
-            text="editar"
-            onClick={() =>ViewModal()}           
-          /> 
-        </BiTrash>
-       
+          <h1>{text}</h1>
+          <span>
+            <BiTrash size={30} onClick={onDelete}>
+              <Button
+                buttonType="danger"
+                text="apagar"
+                onClick={onDelete}
+              />
+            </BiTrash>
 
-        <BiMessageSquareEdit size={30} >
-        <Button
-          buttonType="danger"
-          text="apagar"
-          onClick={() => setIsModalOpen(true)}
-        /> 
-        </BiMessageSquareEdit>
-       
+          <BiMessageSquareEdit size={30} onClick={onEdit}>
+              <Button
+                buttonType="primary"
+                text="editar"
+                onClick={onEdit
+                }
+              />
+              </BiMessageSquareEdit>
+            
           </span>
-       
         </SpanDiv>
       </TitleText>
-      {showModal&& (
-      <EditModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSave={handleSave}
-        initialTitle="Initial Title"
-        initialContent="Initial Content"
-      />)}
+
     </Container>
   );
 };
 
-export default MyTitlePost;
+export default MyTitlePost

@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { IButtonProps, ButtonType } from "./index";
 
 export const Container = styled.div`
-display: flex;`
+  display: flex;
+`;
 
 export const ButtonStyle = styled.button<IButtonProps>`
   width: 120px;
@@ -10,7 +11,7 @@ export const ButtonStyle = styled.button<IButtonProps>`
   height: 32px;
   color: white;
 
-  font-family: Roboto; // Depois lembra de colocar fonte
+  font-family: Roboto;
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
@@ -28,6 +29,15 @@ export const ButtonStyle = styled.button<IButtonProps>`
       default:
         return "#cccccc";
     }
-    
   }};
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 `;
+
+
+
+
+
