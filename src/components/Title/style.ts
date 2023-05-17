@@ -5,10 +5,25 @@ export const Container = styled.div<ITitleProps> `
 `;
 
 export const TitleText = styled.div<ITitleProps>`
+> h1 {
+  display: flex;
+
+  justify-content: ${(props) => {
+    switch (props.titleType) {
+      case 'MS':
+        return 'center';
+      case 'CT':
+        return 'baseline';
+      case 'PC':
+        return 'baseline';
+    }
+  }};
+ margin: 0;
+}
   padding: ${(props) => {
     switch (props.titleType) {
       case 'MS':
-        return '25px';
+        return '30px';
       case 'CT':
         return '23px';
       case 'PC':
@@ -19,7 +34,7 @@ export const TitleText = styled.div<ITitleProps>`
   width: ${(props) => {
     switch (props.titleType) {
       case 'MS':
-        return '800px';
+        return '1300px';
       case 'CT':
         return '100%';
       case 'PC':

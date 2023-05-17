@@ -17,16 +17,18 @@ export const Container = styled.div`
 `;
 
 export const ContainerTitle = styled.div`
-  margin-top: 10px;
+  background-color: red;
+
+ 
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  height: 334px;
+  height: 330px;
   width: 750px;
   padding: 0;
-  margin-top: 5px;
+  margin-top: 2px;
   border: 1px solid;
   border-radius: 16px;
 

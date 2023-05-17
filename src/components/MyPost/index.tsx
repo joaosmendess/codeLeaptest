@@ -43,11 +43,12 @@ const MyPost: React.FC<IPostProps> = ({
   }
 
   const handleDelete = () => {
+  
     // Aqui você pode implementar a lógica para deletar o post
     console.log("Deleting post...");
     // Exemplo: defina os campos relevantes como vazios ou nulos
-    setCurrentContent("");
-    setCurrentTitle("");
+    setCurrentContent('');
+    setCurrentTitle('')
     setIsDeleteModalOpen(false);
   };
 
