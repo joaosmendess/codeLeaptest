@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {ModalContainer, ModalBackground,ModalContent,ModalHeader,ModalTextarea ,ModalForm,ModalInput,ModalActions, ModalButton} from './style'
+import {ModalContainer, ModalBackground,ModalContent,ModalHeader,ModalTextarea ,ModalForm,ModalInput,ModalActions, ModalSaveButton, ModalCancelButton} from './style'
 
 interface EditModalProps {
   isOpen: boolean;
@@ -7,9 +7,10 @@ interface EditModalProps {
   onSave: (title: string, content: string) => void;
   initialTitle: string;
   initialContent: string;
+  
 }
 
-const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, onSave, initialTitle, initialContent }) => {
+const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, onSave, initialTitle, initialContent ,}) => {
   const [title, setTitle] = useState(initialTitle);
   const [content, setContent] = useState(initialContent);
 
@@ -33,14 +34,19 @@ const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, onSave, initialT
     <ModalContainer >
      <ModalBackground >
       <ModalContent >
-        <ModalHeader>Edit</ModalHeader>
+        <ModalHeader>Edit item</ModalHeader>
         <ModalForm>
+          <label > <b>Title</b> </label>
           <ModalInput
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title"
+      
+            
+            
           />
+          <label ><b>Content</b></label>
           <ModalTextarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -48,8 +54,9 @@ const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, onSave, initialT
           />
         </ModalForm>
         <ModalActions>
-          <ModalButton onClick= {handleSave}>Save</ModalButton>
-          <ModalButton onClick={handleCancel}>Cancel</ModalButton>
+          <ModalCancelButton onClick={handleCancel}> <b>Cancel</b> 
+          </ModalCancelButton>
+          <ModalSaveButton onClick= {handleSave}>Save</ModalSaveButton>
         </ModalActions>
       </ModalContent>
       </ModalBackground>

@@ -73,8 +73,9 @@ const MyPost: React.FC<IPostProps> = ({
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           onSave={handleSave}
-          initialTitle="Initial Title"
-          initialContent="Initial Content"
+          initialTitle="Hello world!"
+          initialContent="Content here"
+         
         />
         )}
          
