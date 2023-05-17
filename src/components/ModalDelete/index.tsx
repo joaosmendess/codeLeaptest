@@ -5,7 +5,8 @@ import {
   ModalContent,
   ModalHeader,
   ModalActions,
-  ModalButton
+  ModalDeleteButton,
+  ModalCancelButton
 } from './style';
 
 interface DeleteModalProps {
@@ -36,11 +37,12 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
     <ModalContainer>
       <ModalBackground  />
       <ModalContent>
-        <ModalHeader>Confirmation</ModalHeader>
-        <p>Are you sure you want to delete the post?</p>
+        
+        
+        <p> <b>Are you sure you want to delete this item?</b> </p>
         <ModalActions>
-          <ModalButton onClick={handleDelete} >Delete</ModalButton>
-          <ModalButton onClick={handleCancel}>Cancel</ModalButton>
+          <ModalCancelButton onClick={handleCancel}>  <b>Cancel</b> </ModalCancelButton>
+          <ModalDeleteButton onClick={handleDelete} >Delete</ModalDeleteButton>
         </ModalActions>
       </ModalContent>
     </ModalContainer>

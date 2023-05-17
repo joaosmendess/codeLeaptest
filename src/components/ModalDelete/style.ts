@@ -23,10 +23,11 @@ export const ModalBackground = styled.div`
 
 export const ModalContent = styled.div`
   background-color: #fff;
-  width: 400px;
+  width: 660px;
   padding: 20px;
   border-radius: 8px;
-  text-align: center;
+  text-align: left;
+  position: relative;
 `;
 
 export const ModalHeader = styled.h3`
@@ -36,17 +37,29 @@ export const ModalHeader = styled.h3`
 export const ModalActions = styled.div`
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   
 `;
 
-export const ModalButton = styled.button`
-  margin: 0 10px;
-  padding: 10px 20px;
+export const ModalDeleteButton = styled.button`
+ 
   border: none;
-  background-color: #333;
+  width: 120px;
+  background-color: #FF5151;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
 `;
 
+
+export const ModalCancelButton = styled.button`
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: 1px solid #999999;
+  width: 120px;
+  background-color: #FFFFFF;
+  color: #000000;
+  
+  border-radius: 4px;
+  cursor: pointer;
+`;
