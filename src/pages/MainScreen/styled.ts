@@ -17,14 +17,14 @@ export const Container = styled.div`
 
   ${media.medium} {
     margin: 50% 6.5%;
-    width: 100%;
+    width: 120%;
     height: auto;
   }
 
   ${media.small} {
     margin: 0%;
     height: auto;
-    width: 93%;
+    width: 130%;
   }
 `;
 
