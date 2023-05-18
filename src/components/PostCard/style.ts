@@ -1,5 +1,9 @@
 import styled from "styled-components";
-
+const media = {
+  small: '@media (min-width: 320px)',
+  medium: '@media (min-width: 421px) and (max-width: 768px)',
+  large: '@media (min-width: 769px)',
+};
 export const Container = styled.div`
   box-sizing: border-box;
   width: 752px;
@@ -9,10 +13,8 @@ export const Container = styled.div`
   border-radius: 16px;
   margin-top: 15px;
 
-  @media only screen and (max-width: 768px) {
-    width: 650px;
-    height: auto;
-    padding: 0 ;
+  ${media.small} {
+    max-width: 600px;
   }
 `;
 
@@ -29,24 +31,28 @@ export const Content = styled.div`
     font-style: normal;
     text-align: left;
     font-size: 18px;
-    padding: 10px;
+    padding: 5px;
     color: #777777;
+    display: flex;
+    
   }
 
   > span {
     width: 148.74px;
-    margin-left: 390px;
+    margin-left: 350px;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #777777;
+    word-wrap: normal;
+    display: flex;
+${media.small} {
+ font-size: 18px;
+margin-left: 75%;
 
-    @media only screen and (max-width: 768px) {
-      margin-left: 0;
-      margin-top: 10px;
-      text-align: center;
-      width: 100%;
-    }
+word-wrap: normal;
+}
+
   }
 
   > p {
@@ -57,15 +63,16 @@ export const Content = styled.div`
     line-height: 25px;
     left: 608px;
     top: 590px;
+    word-wrap:break-word ;
 
-    @media only screen and (max-width: 768px) {
-      width: 100%;
-      margin-top: 10px;
-    }
+  ${media.small} {
+    width: 440px;
+    font-size: 18px;
+    line-height: 25px;
+    font-size: 17px;
+    padding: 18px;
+  }
   }
 
-  @media only screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-  }
+ 
 `;

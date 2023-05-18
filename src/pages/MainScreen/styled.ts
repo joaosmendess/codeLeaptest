@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+const media = {
+  small: '@media (min-width: 320px)',
+  medium: '@media (min-width: 421px) and (max-width: 768px)',
+  large: '@media (min-width: 769px)',
+};
+
 export const Container = styled.div`
   margin: 50% 20%;
   margin-top: 10px;
@@ -9,17 +15,25 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media only screen and (max-width: 768px) {
-    margin: 10px;
+  ${media.medium} {
+    margin: 50% 6.5%;
     width: 100%;
     height: auto;
+  }
+
+  ${media.small} {
+    margin: 0%;
+    height: auto;
+    width: 93%;
   }
 `;
 
 export const ContainerTitle = styled.div`
   background-color: red;
 
- 
+  ${media.small} {
+    /* Estilos para telas pequenas */
+  }
 `;
 
 export const Content = styled.div`
@@ -32,9 +46,14 @@ export const Content = styled.div`
   border: 1px solid;
   border-radius: 16px;
 
-  @media only screen and (max-width: 768px) {
-    width: 100%;
+  ${media.medium} {
+    width: 650px;
   }
+  ${media.small} {
+    width: 600px;
+  }
+
+ 
 `;
 
 export const ContainerButton = styled.div`
@@ -46,7 +65,14 @@ export const ContainerButton = styled.div`
   max-width: 750px;
   max-height: 75px;
 
-  @media only screen and (max-width: 768px) {
+  ${media.medium} {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  ${media.small} {
     flex-direction: column;
     align-items: center;
     margin-right: 0;
@@ -56,4 +82,8 @@ export const ContainerButton = styled.div`
 
 export const ContainerCard = styled.div`
   padding: 10px;
+
+  ${media.small} {
+    /* Estilos para telas pequenas */
+  }
 `;

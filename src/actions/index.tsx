@@ -30,7 +30,18 @@ const PostCardContainer: React.FC   = () => {
       return <div>{error}</div>;
     }
 
-    console.log( jobs.map((job) => {job.created_datetime}));
+    console.log(
+      jobs.map((job) => {
+        const formattedDatetime = job.created_datetime.replace(
+          /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z$/,
+          '$3/$2/$1 $4:$5'
+
+        );
+        return formattedDatetime
+        
+      })
+    );
+    
     
    
   
@@ -44,7 +55,7 @@ const PostCardContainer: React.FC   = () => {
             username={job.username}
             title={job.title}
             content={job.content}     
-            created_datetime={job.created_datetime}  
+            created_datetime={job.created_datetime.replace(/T|:\d{2}(\.\d+)?Z/g, ' ').replace(/-/g, '/')}  
                />
             
         ))}

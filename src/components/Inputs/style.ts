@@ -1,25 +1,26 @@
 import styled from "styled-components";
 
-
+const media = {
+  small: '@media (min-width: 320px)',
+  medium: '@media (min-width: 421px) and (max-width: 768px)',
+  large: '@media (min-width: 769px)',
+};
 
 export const TitleInput = styled.input`
   border: 1px solid #cccccc;
-  min-width: 452px;
+  min-width: 425px;
   max-width: 704px;
   height: 32px;
   border-radius: 8px;
   padding: 3px;
 
-  @media (max-width: 768px) {
-    max-width: 100%;
-    width: 100%;
-  }
+ 
 `;
 
 export const ContentInput = styled.textarea`
   border: 1px solid #cccccc;
-  width: 704px;
-  min-width: 100px;
+  width: 710px;
+  min-width: 105px;
   max-width: 730px;
   height: 74px;
   max-height: 90px;
@@ -32,21 +33,20 @@ export const ContentInput = styled.textarea`
     padding: 2px;
   }
 
-  @media (max-width: 768px) {
-    max-width: 700%;
-    width: 100%;
+  ${media.small} {
+    
+    max-width: 575px;
+    max-height: 85px;
   }
 `;
 
-
-/* media query para telas menores que 768px */
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
 
-  @media (max-width: 768px) {
-    padding: 5px;
+  ${media.small} {
+    padding: 10px;
   }
 `;
 
@@ -57,8 +57,8 @@ export const Label = styled.label`
   letter-spacing: 0em;
   text-align: left;
 
-  @media (max-width: 768px) {
-    font-size: 14px;
-    line-height: 16px;
+  ${media.small} {
+    font-size: 16px;
+    line-height: 19px;
   }
 `;

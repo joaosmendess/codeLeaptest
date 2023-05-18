@@ -6,3 +6,4 @@ export interface IJob {
     created_datetime: string;
     
   }
+  
