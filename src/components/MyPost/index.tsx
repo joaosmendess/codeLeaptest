@@ -26,6 +26,7 @@ const MyPost: React.FC<IPostProps> = ({
   const [currentContent, setCurrentContent] = useState(content);
   const [currentTitle, setCurrentTitle] = useState(title)
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [showContainer, setShowContainer] = useState(true);
 
  
 
@@ -49,14 +50,24 @@ const MyPost: React.FC<IPostProps> = ({
     // Exemplo: defina os campos relevantes como vazios ou nulos
     setCurrentContent('');
     setCurrentTitle('')
-    setIsDeleteModalOpen(false);
+    setShowContainer(false);
+    setIsDeleteModalOpen(true);
   };
 
     
 
+  const handleDeleteContainer = () => {
+    // Aqui você pode implementar a lógica para deletar o contêiner
+    console.log("Deleting container...");
+    setShowContainer(false);
+  };
+  
+
 
 
   return (
+    <>
+    {showContainer && (
     <Container>
        
       <Header>
@@ -65,6 +76,7 @@ const MyPost: React.FC<IPostProps> = ({
         onEdit={handleOpenModal}/>
      
       </Header>
+     
      
       <Content>
         <label>{username}</label> <span>{created_datetime}</span>
@@ -87,11 +99,17 @@ const MyPost: React.FC<IPostProps> = ({
             onDelete={handleDelete}
           />
         )}
+        
 
       </Content>
+      
+      
     
     </Container>
+     )}
+    </>
   );
+  
 };
 
 export default MyPost;
