@@ -1,7 +1,7 @@
 import { fetchJobs } from '../redux/types/fetchJobs';
 import {   IJob } from '../redux/types/index';
 import PostCard from '../components/PostCard';
-import { Container, Content, Header } from "../components/PostCard/style";
+import { Container, Content, Header, media } from "../components/PostCard/style";
 import React, { useEffect, useState } from 'react';
 
 const PostCardContainer: React.FC   = () => {
@@ -30,6 +30,9 @@ const PostCardContainer: React.FC   = () => {
       return <div>{error}</div>;
     }
 
+
+    const maxPostsToShow = media.small ? 1 : jobs.length;
+
     console.log(
       jobs.map((job) => {
         const formattedDatetime = job.created_datetime.replace(
@@ -47,7 +50,7 @@ const PostCardContainer: React.FC   = () => {
   
     return (
       <>
-        {jobs.map((job) => (
+        {jobs.slice(0, maxPostsToShow).map((job) => (
           <PostCard  
             key={job.id}
             id={job.id}

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const media = {
+export const media = {
   small: '@media (min-width: 320px)',
   medium: '@media (min-width: 421px) and (max-width: 768px)',
   large: '@media (min-width: 769px)',
