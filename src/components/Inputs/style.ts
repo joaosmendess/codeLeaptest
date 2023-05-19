@@ -1,25 +1,31 @@
 import styled from "styled-components";
 
 const media = {
-  small: '@media (min-width: 320px)',
-  medium: '@media (min-width: 421px) and (max-width: 768px)',
-  large: '@media (min-width: 769px)',
+  small: "@media (min-width: 320px)",
+  medium: "@media (min-width: 421px) and (max-width: 768px)",
+  large: "@media (min-width: 769px)"
 };
 
 export const TitleInput = styled.input`
   border: 1px solid #cccccc;
-  min-width: 425px;
+  min-width: 320px;
   max-width: 704px;
   height: 32px;
   border-radius: 8px;
   padding: 3px;
 
- 
+  ${media.medium} {
+    min-width: 425px;
+  }
+
+  ${media.large} {
+    min-width: 625px;
+  }
 `;
 
 export const ContentInput = styled.textarea`
   border: 1px solid #cccccc;
-  width: 710px;
+  width: 100%;
   min-width: 105px;
   max-width: 730px;
   height: 74px;
@@ -33,8 +39,7 @@ export const ContentInput = styled.textarea`
     padding: 2px;
   }
 
-  ${media.small} {
-    
+  ${media.medium} {
     max-width: 575px;
     max-height: 85px;
   }
@@ -46,7 +51,7 @@ export const InputContainer = styled.div`
   padding: 10px;
 
   ${media.small} {
-    padding: 10px;
+    padding: 5px;
   }
 `;
 
@@ -58,7 +63,6 @@ export const Label = styled.label`
   text-align: left;
 
   ${media.small} {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
   }
 `;

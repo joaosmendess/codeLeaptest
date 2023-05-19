@@ -1,30 +1,35 @@
 import styled from "styled-components";
 
 const media = {
-  small: '@media (min-width: 320px)',
-  medium: '@media (min-width: 421px) and (max-width: 768px)',
-  large: '@media (min-width: 769px)',
+  small: "@media (max-width: 420px)",
+  medium: "@media (min-width: 421px) and (max-width: 768px)",
+  large: "@media (max-width: 1024px)"
 };
 
 export const Container = styled.div`
-  margin: 50% 20%;
-  margin-top: 10px;
+  margin:  0 auto;
   width: 800px;
   height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 
   ${media.medium} {
-    margin: 50% 6.5%;
-    width: 120%;
+    margin: 0 auto;
+    width: 600px;
+    
     height: auto;
   }
 
   ${media.small} {
-    margin: 0%;
-    height: auto;
-    width: 130%;
+    
+    margin: 0 auto;
+    width: 90%;
+  }
+  ${media.large} {
+    width: 50%;
+   
   }
 `;
 
@@ -40,25 +45,26 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 330px;
-  width: 750px;
+  width: 85%;
   padding: 0;
   margin-top: 2px;
   border: 1px solid;
   border-radius: 16px;
 
   ${media.medium} {
-    width: 650px;
-  }
-  ${media.small} {
     width: 600px;
   }
-
- 
+  ${media.small} {
+    width: 100%;
+  }
+  ${media.large} {
+    width: 600px;
+  }
 `;
 
 export const ContainerButton = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   padding: 15px;
   margin-right: 15px;
   min-width: 100px;

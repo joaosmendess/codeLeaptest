@@ -1,17 +1,31 @@
 import styled from "styled-components";
 
+const media = {
+  small: "@media (max-width: 320px)",
+  medium: "@media (min-width: 421px) and (max-width: 768px)",
+  large: "@media (min-width: 769px)"
+};
+
 export const Container = styled.div`
-  padding: 10px;
+  padding: 20px;
   background-color: #7695ec;
   color: #FFFFFF;
   border-radius: 16px 16px 0px 0px;
   font-size: 12px;
   width: 750px;
+ 
 
-  @media (max-width: 768px) {
-    padding: 5px;
-    
+  ${media.medium} {
+    padding: 15px;
     font-size: 10px;
+    width: 100%;
+    max-width: 700px;
+  }
+  ${media.large} {
+    padding: 15px;
+    font-size: 10px;
+    width: 100%;
+    max-width: 700px;
   }
 `;
 
@@ -27,15 +41,17 @@ export const SpanDiv = styled.div`
 
   > span {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   > svg {
-    width: 10px;
+    
+    display: flex;
+    justify-content: flex-end;
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  ${media.medium} {
+    flex-direction: row;
 
     > h1 {
       margin-bottom: 10px;
@@ -44,17 +60,12 @@ export const SpanDiv = styled.div`
     > span {
       justify-content: flex-start;
     }
+    >svg{
+      display: flex;
+      justify-content: baseline;
+      
+    }
   }
+`;
 
-  
-`
-
-export const ButtonModal = styled.button `
-
-
-
-
-
-`
-
-;
+export const ButtonModal = styled.button``;

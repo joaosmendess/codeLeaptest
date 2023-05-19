@@ -31,7 +31,7 @@ const PostCardContainer: React.FC   = () => {
     }
 
 
-    const maxPostsToShow = media.small ? 1 : jobs.length;
+    const maxPostsToShow = media.small ? 2 : jobs.length;
 
     console.log(
       jobs.map((job) => {
