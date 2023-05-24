@@ -7,13 +7,14 @@ export type ButtonType = "primary" | "secondary" |"danger" | "submit" | "delete"
 export interface IButtonProps {
   text: string;
   buttonType: ButtonType;
-  onClick: ()=> void
+  onClick: ()=> void;
+  style?: any;
 }
 // nesse type agora, vc meio qe coloca se ele pode ser, de deletar, de dar submit
 
-const Button: React.FC<IButtonProps> = ({ text, buttonType, onClick }) => {
+const Button: React.FC<IButtonProps> = ({ text, buttonType, onClick, style }) => {
   return (
-    <ButtonStyle text={text} buttonType={buttonType} onClick={onClick}>
+    <ButtonStyle style={style} text={text} buttonType={buttonType} onClick={onClick}>
       {text}
     </ButtonStyle>
   );

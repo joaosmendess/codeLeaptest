@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const media = {
-  small: "@media (max-width: 320px)",
-  medium: "@media (min-width: 421px) and (max-width: 768px)",
-  large: "@media (min-width: 1024px)"
+  small: "@media (min-width: 320px) and (max-width: 420px)",
+  medium: "@media (min-width: 421px) and (max-width: 798px)",
+  large: "@media (min-width: 800px)"
 };
 
 export const Container = styled.div`
@@ -16,14 +16,18 @@ export const Container = styled.div`
   margin-top: 15px;
 
   ${media.large} {
-    width: 690px;
+    width: 100%;
     margin: 0 auto;
   }
 
   ${media.small} {
-    width: 90%;
-    max-width: 502px;
+    width: 100%;
+    max-width: 450px;
     margin: 0 auto;
+  }
+
+  @media (max-width: 320px) {
+    width: 90vw;
   }
 `;
 
@@ -73,6 +77,5 @@ export const Content = styled.div`
     ${media.small} {
       font-size: 16px;
     }
-  } `
-  
-
+  }
+`;

@@ -60,7 +60,7 @@ export const Content = styled.div`
     ${media.medium} {
      display: flex;
  width: 40px;
- text-align: justify;
+ 
       
   
     }

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const media = {
   small: "@media (min-width: 320px)",
-  medium: "@media (min-width: 421px) and (max-width: 768px)",
-  large: "@media (min-width: 769px)"
+  medium: "@media (min-width: 421px) and (max-width: 798px)",
+  large: "@media (min-width: 1350px)"
 };
 
 export const TitleInput = styled.input`
@@ -19,8 +19,9 @@ export const TitleInput = styled.input`
   }
 
   ${media.large} {
-    min-width: 625px;
+  width: 600px;
   }
+ 
 `;
 
 export const ContentInput = styled.textarea`
@@ -42,6 +43,12 @@ export const ContentInput = styled.textarea`
   ${media.medium} {
     max-width: 575px;
     max-height: 85px;
+  }
+  ${media.large} {
+  max-width: 650px;
+  height: 65px;
+  
+  
   }
 `;
 

@@ -34,7 +34,6 @@ const MainScreen: React.FC = () => {
   const [showPost, setShowPost] = useState(false);
   const [posts, setPosts] = useState<Post[]>([]);
 
-
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -42,8 +41,7 @@ const MainScreen: React.FC = () => {
       setInputValue(event.target.value);
     } else if (event.target === textareaRef.current) {
       setTextareaValue(event.target.value);
-    } 
-    
+    }
   };
 
   const handleSubmit = () => {
@@ -51,49 +49,57 @@ const MainScreen: React.FC = () => {
     setContent(textareaValue);
     setShowPost(true);
     setPosts([
-      
       {
         title: inputValue,
         content: textareaValue,
         created_datetime: new Date().toLocaleString(),
-      },...posts
+      },
+      ...posts
     ]);
     setInputValue("");
     setTextareaValue("");
-  }
-  
+  };
+
   return (
     <Container>
-      <Title titleType="MS" text="CodeLeap Network" />
+      <ContainerTitle>
+        <Title titleType="MS" text="CodeLeap Network" />
+      </ContainerTitle>
 
       <Content>
         <Title titleType="CT" text="What’s on your mind?" />
         <Input
           input
           placeholder="Hello world"
-          label="Tittle"
+          label="Title"
           ref={inputRef}
           onChange={handleChange}
-        ></Input>
-        <Input textarea placeholder="Content here" label="Content" ref={textareaRef} onChange={handleChange}></Input>
+        />
+        <Input
+          textarea
+          placeholder="Content here"
+          label="Content"
+          ref={textareaRef}
+          onChange={handleChange}
+        />
         <ContainerButton>
           <Button
             text="Create"
-            buttonType={"primary"}
+            buttonType="primary"
             onClick={handleSubmit}
           />
         </ContainerButton>
       </Content>
-     {posts.map((post, index) => 
-      <MyPost
-       key={index}
-       title={post.title}
-       content={post.content}
-       username="@joaosmendess"
-       created_datetime={post.created_datetime}
-      />
-      )}
-      
+      {posts.map((post, index) => (
+        <MyPost
+          key={index}
+          title={post.title}
+          content={post.content}
+          username="@joaosmendess"
+          created_datetime={post.created_datetime}
+        />
+      ))}
+
       <ContainerCard>
         <PostCardContainer />
       </ContainerCard>

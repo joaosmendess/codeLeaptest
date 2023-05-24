@@ -1,35 +1,30 @@
 import styled from "styled-components";
 
-const media = {
+export const media = {
   small: "@media (max-width: 420px)",
-  medium: "@media (min-width: 421px) and (max-width: 768px)",
-  large: "@media (max-width: 1024px)"
+  medium: "@media (min-width: 421px) and (max-width: 798px)",
+  large: "@media (min-width: 1350px)"
 };
 
 export const Container = styled.div`
-  margin:  0 auto;
+  margin: 0 auto;
   width: 800px;
   height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 
   ${media.medium} {
-    margin: 0 auto;
     width: 600px;
-    
     height: auto;
   }
 
   ${media.small} {
-    
-    margin: 0 auto;
     width: 90%;
   }
+
   ${media.large} {
-    width: 50%;
-   
+    width: 100%;
   }
 `;
 
@@ -52,13 +47,15 @@ export const Content = styled.div`
   border-radius: 16px;
 
   ${media.medium} {
-    width: 600px;
+    width: 55%;
   }
+
   ${media.small} {
     width: 100%;
   }
+
   ${media.large} {
-    width: 600px;
+    width: 670px;
   }
 `;
 
