@@ -6,6 +6,7 @@ import {
   ContainerCard,
   Content,
   ContainerTitle,
+  MyPostContainer
 } from "./styled";
 
 import Title, { TitleType } from "../../components/Title";
@@ -58,6 +59,10 @@ const MainScreen: React.FC = () => {
     ]);
     setInputValue("");
     setTextareaValue("");
+    if (inputValue && setTextareaValue === null) {
+      return alert("ola")
+      
+    }
   };
 
   return (
@@ -90,6 +95,7 @@ const MainScreen: React.FC = () => {
           />
         </ContainerButton>
       </Content>
+      <MyPostContainer>
       {posts.map((post, index) => (
         <MyPost
           key={index}
@@ -99,7 +105,7 @@ const MainScreen: React.FC = () => {
           created_datetime={post.created_datetime}
         />
       ))}
-
+</MyPostContainer>
       <ContainerCard>
         <PostCardContainer />
       </ContainerCard>

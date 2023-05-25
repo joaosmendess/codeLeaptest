@@ -2,24 +2,24 @@ import styled from "styled-components";
 
 const media = {
   small: "@media (min-width: 320px)",
-  medium: "@media (min-width: 421px) and (max-width: 798px)",
-  large: "@media (min-width: 1350px)"
+  medium: "@media (min-width: 421px) and (max-width: 799px)",
+  large: "@media (min-width: 801px)"
 };
 
 export const TitleInput = styled.input`
   border: 1px solid #cccccc;
   min-width: 320px;
-  max-width: 704px;
+  
   height: 32px;
   border-radius: 8px;
   padding: 3px;
 
   ${media.medium} {
-    min-width: 425px;
+  max-width: 70vw;
   }
 
   ${media.large} {
-  width: 600px;
+width: 70vw;
   }
  
 `;
@@ -28,7 +28,7 @@ export const ContentInput = styled.textarea`
   border: 1px solid #cccccc;
   width: 100%;
   min-width: 105px;
-  max-width: 730px;
+  
   height: 74px;
   max-height: 90px;
   border-radius: 8px;
@@ -39,13 +39,18 @@ export const ContentInput = styled.textarea`
     left: 0;
     padding: 2px;
   }
+  ${media.small} {
+    max-width: 335px;
+    max-height: 75px;
+  }
 
   ${media.medium} {
+    height: 130px;
     max-width: 575px;
-    max-height: 85px;
+    max-height: 130px;
   }
   ${media.large} {
-  max-width: 650px;
+   max-width: 73vw;
   height: 65px;
   
   

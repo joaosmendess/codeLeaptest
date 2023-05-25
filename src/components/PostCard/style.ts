@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const media = {
   small: "@media (min-width: 320px) and (max-width: 420px)",
   medium: "@media (min-width: 421px) and (max-width: 798px)",
-  large: "@media (min-width: 800px)"
+  large: "@media (min-width: 801px)"
 };
 
 export const Container = styled.div`
@@ -13,17 +13,17 @@ export const Container = styled.div`
   background: #FFFFFF;
   border: 1px solid #999999;
   border-radius: 16px;
-  margin-top: 15px;
+  margin-top: 15px; 
 
   ${media.large} {
-    width: 100%;
-    margin: 0 auto;
+    width: 75vw;
+    margin-top: 10px;
   }
 
   ${media.small} {
     width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin-top: 10px;
   }
 
   @media (max-width: 320px) {

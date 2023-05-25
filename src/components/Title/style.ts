@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const media = {
-  small: "@media (min-width: 375px) and (max-width: 419px)",
-  medium: "@media (min-width: 421px) and (max-width: 790px)",
-  large: "@media (min-width: 1350px)"
+  small: "@media (min-width: 359px) and (max-width: 428px)",
+  medium: "@media (min-width: 421px) and (max-width: 798px)",
+  large: "@media (min-width: 801)"
 };
 
 export interface ITitleProps {
@@ -20,12 +20,19 @@ export const Container = styled.div<ITitleProps>`
 
 export const TitleText = styled.div<ITitleProps>`
   > h1 {
+    white-space: nowrap;
+    font-family: "Roboto";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 22px;
+  
     display: flex;
     justify-content: ${(props) => {
       switch (props.titleType) {
         case "MS":
           return "center";
-        case "CT":
+        case "CT": ""
         case "PC":
           return "baseline";
         default:
@@ -40,7 +47,7 @@ export const TitleText = styled.div<ITitleProps>`
       case "MS":
         return "30px";
       case "CT":
-        return "23px";
+        return "15px";
       case "PC":
         return "20px";
       default:
@@ -67,17 +74,15 @@ export const TitleText = styled.div<ITitleProps>`
       case "CT":
         return "none";
       case "PC":
-        return "16px 16px 0px 0px";
+        return "16px 14px 0px 0px";
       default:
         return "initial";
     }
   }};
 
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 26px;
+  
+  
+  
 
   color: ${(props) => {
     switch (props.titleType) {
@@ -126,7 +131,18 @@ export const TitleText = styled.div<ITitleProps>`
         case "CT":
           return "100%";
         case "PC":
-          return "350px";
+          return "90vw";
+        default:
+          return "initial";
+      }
+    }};
+
+
+max-width: ${(props) => {
+      switch (props.titleType) {
+       
+        case "PC":
+          return "430px";
         default:
           return "initial";
       }
@@ -146,6 +162,7 @@ export const TitleText = styled.div<ITitleProps>`
           return "initial";
       }
     }};
+  
 
     border-radius: ${(props) => {
       switch (props.titleType) {
@@ -181,7 +198,7 @@ export const TitleText = styled.div<ITitleProps>`
         case "CT":
           return "500px";
         case "PC":
-          return "100vh";
+          return "100%";
         default:
           return "initial";
       }
@@ -193,7 +210,7 @@ export const TitleText = styled.div<ITitleProps>`
         case "CT":
           return "none";
         case "PC":
-          return "16px 16px 0px 0px";
+          return "16px 14px 0px 0px";
         default:
           return "initial";
       }

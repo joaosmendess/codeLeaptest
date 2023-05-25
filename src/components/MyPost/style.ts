@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const media = {
-  small: "@media (max-width: 320px)",
-  medium: "@media (min-width: 421px) and (max-width: 768px)",
-  large: "@media (min-width: 769px)"
+  small: "@media (min-width: 320px) and (max-width: 420px)",
+  medium: "@media (min-width: 421px) and (max-width: 798px)",
+  large: "@media (min-width: 801px)"
 };
 
 export const Container = styled.div`
@@ -16,22 +16,24 @@ export const Container = styled.div`
   margin-top: 15px;
 
   ${media.large} {
-    width: 700px;
-    margin: 0 auto;
+    width: 75vw;
+    margin: 25px auto;
   }
 
   ${media.medium} {
     width: 600px;
+    margin: 15px auto;
   }
 
   ${media.small} {
-    width: 100%;
+    width: 90vw;
     max-width: 520px;
+    margin: 15px auto;
   }
 `;
 
 export const Content = styled.div`
-  padding: 15px;
+  padding: 0px;
 
   > label {
     width: 67.61px;
@@ -41,14 +43,17 @@ export const Content = styled.div`
     font-size: 18px;
     padding: 10px;
     color: #777777;
+    margin-top:15px;
+    display: flex;
   }
 
   > span {
     width: 148.74px;
-    margin-left: 530px;
+    margin-left: 60.5vw;
     font-weight: 400;
     font-size: 18px;
-    line-height: 21px;
+   white-space: nowrap;
+    
     color: #777777;
     display: flex;
     justify-content: flex-end;
@@ -56,10 +61,20 @@ export const Content = styled.div`
     ${media.small} {
       margin-left: 0;
       text-align: right;
+      margin-left: 45vw;
     }
     ${media.medium} {
      display: flex;
  width: 40px;
+ margin-left: 70vw;
+ 
+      
+  
+    }
+    ${media.large} {
+     display: flex;
+ width: 40px;
+ margin-left: 70vw;
  
       
   

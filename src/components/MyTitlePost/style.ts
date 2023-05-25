@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const media = {
-  small: "@media (max-width: 320px)",
+  small: "@media (min-width: 320px) and (max-width: 420px)",
   medium: "@media (min-width: 421px) and (max-width: 768px)",
   large: "@media (min-width: 769px)"
 };
@@ -14,18 +14,24 @@ export const Container = styled.div`
   font-size: 12px;
   width: 750px;
  
+  ${media.small} {
+    padding: 15px;
+    font-size: 10px;
+    width: 100%;
+    
+  }
 
   ${media.medium} {
     padding: 15px;
     font-size: 10px;
     width: 100%;
-    max-width: 700px;
+    
   }
   ${media.large} {
     padding: 15px;
     font-size: 10px;
     width: 100%;
-    max-width: 700px;
+    
   }
 `;
 
@@ -41,7 +47,7 @@ export const SpanDiv = styled.div`
 
   > span {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 
   > svg {

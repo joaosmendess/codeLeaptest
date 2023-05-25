@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const media = {
   small: "@media (max-width: 420px)",
-  medium: "@media (min-width: 421px) and (max-width: 798px)",
-  large: "@media (min-width: 1350px)"
+  medium: "@media (min-width: 421px) and (max-width: 800px)",
+  large: "@media (min-width: 801px)"
 };
 
 export const Container = styled.div`
@@ -47,7 +47,7 @@ export const Content = styled.div`
   border-radius: 16px;
 
   ${media.medium} {
-    width: 55%;
+    width: 100%;
   }
 
   ${media.small} {
@@ -55,7 +55,7 @@ export const Content = styled.div`
   }
 
   ${media.large} {
-    width: 670px;
+    width: 75vw;
   }
 `;
 
@@ -65,14 +65,16 @@ export const ContainerButton = styled.div`
   padding: 15px;
   margin-right: 15px;
   min-width: 100px;
-  max-width: 750px;
+  max-width: 90vw;
   max-height: 75px;
 
   ${media.medium} {
     flex-direction: column;
     align-items: center;
-    margin-right: 0;
-    margin-top: 10px;
+   
+   
+    
+    
   }
 
   ${media.small} {
@@ -81,12 +83,23 @@ export const ContainerButton = styled.div`
     margin-right: 0;
     margin-top: 10px;
   }
+  ${media.large} {
+    flex-direction: column;
+  align-items: flex-end;
+    margin-top: 10px;
+  }
 `;
 
 export const ContainerCard = styled.div`
-  padding: 10px;
+  padding: 8px;
 
   ${media.small} {
-    /* Estilos para telas pequenas */
+  max-width: 500px;
   }
 `;
+export const MyPostContainer = styled.div `
+
+margin-top: 0px;
+
+`
+;

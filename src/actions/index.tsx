@@ -58,7 +58,8 @@ const PostCardContainer: React.FC   = () => {
             username={job.username}
             title={job.title}
             content={job.content}     
-            created_datetime={job.created_datetime.replace(/T|:\d{2}(\.\d+)?Z/g, ' ').replace(/-/g, '/')}  
+            created_datetime={new Date(job.created_datetime).toLocaleString('pt-BR')}
+  
                />
             
         ))}
