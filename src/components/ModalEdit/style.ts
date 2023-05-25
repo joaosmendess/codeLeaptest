@@ -93,7 +93,18 @@ export const ModalTextarea = styled.textarea`
 
   ${media.small} {
     font-size: 14px;
-    height: 50px;
+    max-height: 370px;
+    max-width:100% ;
+  }
+  ${media.medium} {
+    font-size: 14px;
+    max-height: 370px;
+    max-width:100% ;
+  }
+  ${media.large} {
+    font-size: 14px;
+    max-height: 220px;
+    max-width:100% ;
   }
 `;
 

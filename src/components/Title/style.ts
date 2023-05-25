@@ -58,7 +58,7 @@ export const TitleText = styled.div<ITitleProps>`
   width: ${(props) => {
     switch (props.titleType) {
       case "MS":
-        return "1300px";
+        return "1349px";
       case "CT":
         return "100%";
       case "PC":
@@ -127,7 +127,7 @@ export const TitleText = styled.div<ITitleProps>`
     width: ${(props) => {
       switch (props.titleType) {
         case "MS":
-          return "350px";
+          return "100vw";
         case "CT":
           return "100%";
         case "PC":
@@ -153,7 +153,7 @@ max-width: ${(props) => {
     width: ${(props) => {
       switch (props.titleType) {
         case "MS":
-          return "550px";
+          return "100vw";
         case "CT":
           return "50px";
         case "PC":

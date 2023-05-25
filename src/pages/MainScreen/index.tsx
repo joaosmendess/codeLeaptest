@@ -46,6 +46,11 @@ const MainScreen: React.FC = () => {
   };
 
   const handleSubmit = () => {
+    if (inputValue.trim() === "" || textareaValue.trim() === "") {
+      alert("Please enter a title and content before posting.");
+      return;
+    }
+
     setTitleName(inputValue);
     setContent(textareaValue);
     setShowPost(true);
@@ -59,10 +64,14 @@ const MainScreen: React.FC = () => {
     ]);
     setInputValue("");
     setTextareaValue("");
-    if (inputValue && setTextareaValue === null) {
-      return alert("ola")
-      
+
+    if (inputRef.current) {
+      inputRef.current.value = "";
     }
+    if (textareaRef.current) {
+      textareaRef.current.value = "";
+    }
+    
   };
 
   return (
@@ -101,7 +110,7 @@ const MainScreen: React.FC = () => {
           key={index}
           title={post.title}
           content={post.content}
-          username="@joaosmendess"
+          username="@seuusuario"
           created_datetime={post.created_datetime}
         />
       ))}
